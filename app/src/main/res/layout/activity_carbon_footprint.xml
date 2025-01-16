@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#95D3A5"
+    android:backgroundTint="#DF8383"
+    tools:context=".Carbon_footprint">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="#DFDF99"
+            android:text="Carbon Footprint Calculator"
+            android:textStyle="bold"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="Enter Your Monthly Electricity consumption in kilowatt-hours (kWh)"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="To know whats your electricty consumption is, go to Tips and articles"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/electricity"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:background="#DDEAE8"
+            android:ems="10"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="Enter Your Vehicle usage below"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="Select the type of Vehicle you own from below"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="#DDEAE8" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="Enter the number of avarage miles per day  that drove in your vehicle "
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/miles"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#E4F4D2"
+            android:backgroundTint="#DDEAE8"
+            android:ems="10"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2C4D48"
+            android:text="Go back to Home Page"
+            android:textColorLink="#DEA6A6" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2C4D48"
+            android:backgroundTint="#A0D1D1"
+            android:hapticFeedbackEnabled="false"
+            android:text="Tips and articles"
+            android:textColorLink="#DEA6A6"
+            app:strokeColor="#71CCB2" />
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#2C4D48"
+            android:text="Calculate Your Carbon Footprint"
+            android:textColorLink="#DEA6A6" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#81D0C3"
+            android:text="The result of the calculation will be displayed below" />
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#DDF8F4"
+            android:contextClickable="false">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

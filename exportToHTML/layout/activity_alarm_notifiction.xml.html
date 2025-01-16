@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>activity_alarm_notifiction.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activity_alarm_notifiction.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;ScrollView </span><span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s2">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s2">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+    <span class="s1">tools:context</span><span class="s2">=&quot;.MainActivity&quot; </span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_gravity</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:background</span><span class="s2">=&quot;#AEDEE8&quot;</span>
+        <span class="s1">android:gravity</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;20dp&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;LinearLayout</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_gravity</span><span class="s2">=&quot;center&quot;</span>
+            <span class="s1">android:gravity</span><span class="s2">=&quot;center&quot;</span>
+            <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s0">&lt;Button</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/setbtn&quot;</span>
+                <span class="s1">android:layout_width</span><span class="s2">=&quot;30dp&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:layout_weight</span><span class="s2">=&quot;.45&quot;</span>
+                <span class="s1">android:shadowColor</span><span class="s2">=&quot;#3E9479&quot;</span>
+                <span class="s1">android:text</span><span class="s2">=&quot;set / update&quot;</span>
+                <span class="s1">android:textColorHighlight</span><span class="s2">=&quot;#4AA272&quot;</span>
+                <span class="s1">android:textColorLink</span><span class="s2">=&quot;#53AC9D&quot;</span>
+                <span class="s1">app:rippleColor</span><span class="s2">=&quot;#50AB84&quot;</span>
+                <span class="s1">app:strokeColor</span><span class="s2">=&quot;#5EC199&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;TableRow</span>
+                <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+                <span class="s1">android:layout_weight</span><span class="s2">=&quot;.1&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;Button</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/deletebtn&quot;</span>
+                <span class="s1">android:layout_width</span><span class="s2">=&quot;30dp&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:layout_weight</span><span class="s2">=&quot;.45&quot;</span>
+                <span class="s1">android:shadowColor</span><span class="s2">=&quot;#60B9B2&quot;</span>
+                <span class="s1">android:text</span><span class="s2">=&quot;delete&quot;</span>
+                <span class="s1">android:textColorLink</span><span class="s2">=&quot;#58C7C2&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/LinearLayout&gt;</span>
+
+        <span class="s0">&lt;TimePicker</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/timePicker&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;362dp&quot;</span>
+            <span class="s1">android:amPmBackgroundColor</span><span class="s2">=&quot;#A45A5A&quot;</span>
+            <span class="s1">android:numbersBackgroundColor</span><span class="s2">=&quot;#EAE9BA&quot;</span>
+            <span class="s1">android:numbersInnerTextColor</span><span class="s2">=&quot;#994B4B&quot;</span>
+            <span class="s1">android:numbersSelectorColor</span><span class="s2">=&quot;#2A8490&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;DatePicker</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/datePicker&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;280dp&quot;</span>
+            <span class="s1">android:datePickerMode</span><span class="s2">=&quot;spinner&quot;</span>
+            <span class="s1">android:yearListSelectorColor</span><span class="s2">=&quot;#A96969&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+<span class="s0">&lt;/ScrollView&gt;</span></pre>
+</body>
+</html>

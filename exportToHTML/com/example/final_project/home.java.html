@@ -1,0 +1,143 @@
+<html>
+<head>
+<title>home.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+home.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Context</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">home </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+
+    <span class="s0">private </span><span class="s1">TextView welcomeMessage</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Button Carbon_footprint_Button</span><span class="s2">;</span>
+    <span class="s0">private </span><span class="s1">Button Sustainable_products_Button</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">Button alarm_Button</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">Button tips_articlesButton</span><span class="s2">;</span>
+
+    <span class="s0">private </span><span class="s1">Button check_percent_contribution_Button</span><span class="s2">;</span>
+
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_home</span><span class="s2">);</span>
+        <span class="s1">Context c </span><span class="s2">= </span><span class="s0">this</span><span class="s2">;</span>
+
+        <span class="s1">welcomeMessage </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">welcome</span><span class="s2">);</span>
+        <span class="s1">Carbon_footprint_Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">bd</span><span class="s2">);</span>
+        <span class="s1">Sustainable_products_Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">bv</span><span class="s2">);</span>
+        <span class="s1">alarm_Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">bt</span><span class="s2">);</span>
+        <span class="s1">tips_articlesButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">bta</span><span class="s2">);</span>
+        <span class="s1">check_percent_contribution_Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">b_check_percent</span><span class="s2">);</span>
+
+
+
+        <span class="s1">Carbon_footprint_Button</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s3">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">Carbon_footprint</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s3">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+
+        <span class="s1">Sustainable_products_Button</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s3">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">Sustainable_products</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s3">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">alarm_Button</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s3">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">alarm_notifiction</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s3">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+
+
+        <span class="s1">tips_articlesButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s3">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">Tips_articles</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s3">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">check_percent_contribution_Button</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s3">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">Calculate_percent_contribution</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s3">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+        <span class="s1">UserDatabase db </span><span class="s2">= </span><span class="s0">new </span><span class="s1">UserDatabase</span><span class="s2">(</span><span class="s1">c</span><span class="s2">, </span><span class="s4">&quot;Users&quot;</span><span class="s2">);</span>
+
+        <span class="s1">String name </span><span class="s2">= </span><span class="s1">db</span><span class="s2">.</span><span class="s1">getName</span><span class="s2">(</span><span class="s1">login</span><span class="s2">.</span><span class="s1">CURRENT_USER</span><span class="s2">);</span>
+
+        <span class="s3">// Set the welcome message with the user's name</span>
+        <span class="s1">welcomeMessage</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Welcome to EcoHelper &quot; </span><span class="s2">+ </span><span class="s1">name</span><span class="s2">+ </span><span class="s4">&quot;!&quot;</span><span class="s2">+</span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s2">+ </span><span class="s4">&quot;This is Your EcoHelper: A Sustainable Living Guide designed to encourage </span><span class="s0">\n</span><span class="s4">&quot; </span><span class="s2">+</span>
+                <span class="s4">&quot;and facilitate sustainable living practices for You!&quot;</span><span class="s2">);</span>
+
+
+
+    <span class="s2">}</span>
+
+
+
+
+<span class="s2">}</span></pre>
+</body>
+</html>

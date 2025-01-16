@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>sendNotification.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+sendNotification.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">Notification</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">NotificationChannel</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">NotificationManager</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">PendingIntent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">BroadcastReceiver</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Context</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">media</span><span class="s2">.</span><span class="s1">RingtoneManager</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">net</span><span class="s2">.</span><span class="s1">Uri</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Build</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Log</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">NotificationCompat</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">sendNotification </span><span class="s0">extends </span><span class="s1">BroadcastReceiver </span><span class="s2">{</span>
+
+    <span class="s3">// The below parameters are some user-defined constants for creating notifications.</span>
+    <span class="s0">public static final </span><span class="s1">String NOTIFICATION_CHANNEL_ID </span><span class="s2">= </span><span class="s4">&quot;10001&quot; </span><span class="s2">;</span>
+    <span class="s0">private final static </span><span class="s1">String default_notification_channel_id </span><span class="s2">= </span><span class="s4">&quot;default&quot; </span><span class="s2">;</span>
+
+    <span class="s0">public static final </span><span class="s1">String CHANNEL_ID </span><span class="s2">= </span><span class="s4">&quot;Channel1&quot;</span><span class="s2">;</span>
+    <span class="s0">public static </span><span class="s1">String NOTIFICATION_ID </span><span class="s2">= </span><span class="s4">&quot;notification-id&quot; </span><span class="s2">;</span>
+    <span class="s0">public static </span><span class="s1">String NOTIFICATION </span><span class="s2">= </span><span class="s4">&quot;notification&quot; </span><span class="s2">;</span>
+
+    <span class="s0">public void </span><span class="s1">onReceive </span><span class="s2">(</span><span class="s1">Context context </span><span class="s2">, </span><span class="s1">Intent intent</span><span class="s2">) { </span><span class="s3">//called when the BroadcastReceiver object receives an Intent broadcast .</span>
+
+        <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s4">&quot;Hello&quot;</span><span class="s2">, </span><span class="s4">&quot;I am fixed&quot;</span><span class="s2">);</span>
+        <span class="s3">//create an instance of NotificationManager, call getSystemService(), passing in the NOTIFICATION_SERVICE constant.</span>
+        <span class="s1">NotificationManager notificationManager </span><span class="s2">= (</span><span class="s1">NotificationManager</span><span class="s2">) </span><span class="s1">context</span><span class="s2">.</span><span class="s1">getSystemService</span><span class="s2">(</span><span class="s1">Context</span><span class="s2">. </span><span class="s1">NOTIFICATION_SERVICE </span><span class="s2">) ;</span>
+
+        <span class="s1">Notification notification </span><span class="s2">= </span><span class="s1">getNotification</span><span class="s2">(</span><span class="s1">context</span><span class="s2">,</span><span class="s4">&quot;The Alarm is Ringing....Time to Recycle your trash!!&quot;</span><span class="s2">) ;</span>
+
+        <span class="s3">//the device running the app has Android SDK 26 or up</span>
+        <span class="s3">//createNotificationChannel method requires API level 26 or higher.</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Build</span><span class="s2">.</span><span class="s1">VERSION</span><span class="s2">. </span><span class="s1">SDK_INT </span><span class="s2">&gt;= </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Build</span><span class="s2">.</span><span class="s1">VERSION_CODES</span><span class="s2">. </span><span class="s1">O </span><span class="s2">) {</span>
+            <span class="s3">//Notifications may have different importance and priorities values.</span>
+            <span class="s3">//https://developer.android.com/develop/ui/views/notifications/channels</span>
+            <span class="s0">int </span><span class="s1">importance </span><span class="s2">= </span><span class="s1">NotificationManager</span><span class="s2">. </span><span class="s1">IMPORTANCE_HIGH </span><span class="s2">;</span>
+            <span class="s1">NotificationChannel notificationChannel </span><span class="s2">= </span><span class="s0">new </span><span class="s1">NotificationChannel</span><span class="s2">(</span><span class="s1">NOTIFICATION_CHANNEL_ID </span><span class="s2">, </span><span class="s4">&quot;NOTIFICATION_CHANNEL_NAME&quot; </span><span class="s2">, </span><span class="s1">importance</span><span class="s2">) ;</span>
+            <span class="s1">notificationManager</span><span class="s2">.</span><span class="s1">createNotificationChannel</span><span class="s2">(</span><span class="s1">notificationChannel</span><span class="s2">) ;</span>
+        <span class="s2">}</span>
+        <span class="s1">notificationManager</span><span class="s2">.</span><span class="s1">notify</span><span class="s2">(</span><span class="s5">0 </span><span class="s2">, </span><span class="s1">notification</span><span class="s2">) ; </span><span class="s3">//Here notification id is user-defined. deliver the notification</span>
+    <span class="s2">}</span>
+
+    <span class="s3">//User-defined method to create a notification and its contents.</span>
+    <span class="s0">private </span><span class="s1">Notification getNotification </span><span class="s2">(</span><span class="s1">Context context</span><span class="s2">,</span><span class="s1">String content</span><span class="s2">) {</span>
+        <span class="s1">NotificationCompat</span><span class="s2">.</span><span class="s1">Builder builder </span><span class="s2">= </span><span class="s0">new </span><span class="s1">NotificationCompat</span><span class="s2">.</span><span class="s1">Builder</span><span class="s2">(</span><span class="s1">context</span><span class="s2">, </span><span class="s1">default_notification_channel_id </span><span class="s2">) ;</span>
+        <span class="s1">builder</span><span class="s2">.</span><span class="s1">setContentTitle</span><span class="s2">( </span><span class="s4">&quot;Scheduled Notification&quot; </span><span class="s2">) ;</span>
+        <span class="s1">builder</span><span class="s2">.</span><span class="s1">setContentText</span><span class="s2">(</span><span class="s1">content</span><span class="s2">) ;</span>
+        <span class="s1">builder</span><span class="s2">.</span><span class="s1">setSmallIcon</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">drawable</span><span class="s2">. </span><span class="s1">ic_launcher_foreground </span><span class="s2">) ;</span>
+        <span class="s1">builder</span><span class="s2">.</span><span class="s1">setAutoCancel</span><span class="s2">( </span><span class="s0">true </span><span class="s2">) ; </span><span class="s3">//the notification cancels itself automatically</span>
+        <span class="s1">builder</span><span class="s2">.</span><span class="s1">setChannelId</span><span class="s2">( </span><span class="s1">NOTIFICATION_CHANNEL_ID </span><span class="s2">) ;</span>
+        <span class="s0">return </span><span class="s1">builder</span><span class="s2">.</span><span class="s1">build</span><span class="s2">() ;  </span><span class="s3">//return notification object</span>
+    <span class="s2">}</span>
+
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

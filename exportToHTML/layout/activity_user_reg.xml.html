@@ -1,0 +1,247 @@
+<html>
+<head>
+<title>activity_user_reg.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activity_user_reg.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;LinearLayout </span><span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s2">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:background</span><span class="s2">=&quot;#D9E3A0&quot;</span>
+    <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+    <span class="s1">android:padding</span><span class="s2">=&quot;20dp&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/userRegistationTitle&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_gravity</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;10dp&quot;</span>
+        <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;User Registration&quot;</span>
+        <span class="s1">android:textAlignment</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#1A33DC&quot;</span>
+        <span class="s1">android:textColorLink</span><span class="s2">=&quot;#B3AE49&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;35dp&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot;</span>
+        <span class="s1">app:autoSizeTextType</span><span class="s2">=&quot;uniform&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/description_txt&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;71dp&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;5dp&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;10dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Fill out below with your infromation to create your account&quot;</span>
+        <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/error_txt&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;10dp&quot;</span>
+        <span class="s1">android:textAlignment</span><span class="s2">=&quot;center&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#DF1E1E&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/userInfo_txt&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;38dp&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;5dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;User Info:&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/name_txt&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+            <span class="s1">android:layout_marginEnd</span><span class="s2">=&quot;0dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#A9EA86&quot;</span>
+            <span class="s1">android:shadowColor</span><span class="s2">=&quot;#A04646&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Name:&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/nameText&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;48dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:hint</span><span class="s2">=&quot;Name&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/age_txt&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;50dp&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+            <span class="s1">android:layout_marginEnd</span><span class="s2">=&quot;-1dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#A9EA86&quot;</span>
+            <span class="s1">android:shadowColor</span><span class="s2">=&quot;#A04646&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Age:&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/ageText&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;48dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:hint</span><span class="s2">=&quot;Age&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;20dp&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/gender_txt&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+            <span class="s1">android:layout_marginEnd</span><span class="s2">=&quot;-6dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#A9EA86&quot;</span>
+            <span class="s1">android:shadowColor</span><span class="s2">=&quot;#A04646&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Gender:&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/genderText&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;48dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:hint</span><span class="s2">=&quot;Gender&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView33&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;60dp&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView7&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;36dp&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;5dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Account Info:&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/username_txt&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;56dp&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+            <span class="s1">android:layout_marginEnd</span><span class="s2">=&quot;-10dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#A9EA86&quot;</span>
+            <span class="s1">android:shadowColor</span><span class="s2">=&quot;#A04646&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Username:&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/username&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;48dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:hint</span><span class="s2">=&quot;Username&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/usernameDescription&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Username Must be 5 alphanumeric characters&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#5F8BCE&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;horizontal&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/password_txt&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;56dp&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+            <span class="s1">android:layout_marginEnd</span><span class="s2">=&quot;-10dp&quot;</span>
+            <span class="s1">android:layout_weight</span><span class="s2">=&quot;1&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#A9EA86&quot;</span>
+            <span class="s1">android:shadowColor</span><span class="s2">=&quot;#A04646&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Password:&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/password&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;48dp&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:hint</span><span class="s2">=&quot;Password&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+
+    <span class="s0">&lt;TextView</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/passwordDescription&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;15dp&quot;</span>
+        <span class="s1">android:layout_marginBottom</span><span class="s2">=&quot;30dp&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Password Must be 8 characters starting with uppercase&quot;</span>
+        <span class="s1">android:textColor</span><span class="s2">=&quot;#5F8BCE&quot;</span>
+        <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+    <span class="s0">&lt;Button</span>
+        <span class="s1">android:id</span><span class="s2">=&quot;@+id/registerButton&quot;</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;134dp&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:layout_marginStart</span><span class="s2">=&quot;120dp&quot;</span>
+        <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#3A5AC0&quot;</span>
+        <span class="s1">android:text</span><span class="s2">=&quot;Register Account&quot;</span>
+        <span class="s1">android:textAlignment</span><span class="s2">=&quot;center&quot; </span><span class="s0">/&gt;</span>
+<span class="s0">&lt;/LinearLayout&gt;</span></pre>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<html>
+<head>
+<title>login.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+login.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Context</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Log</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">EditText</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">security</span><span class="s2">.</span><span class="s1">NoSuchAlgorithmException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Arrays</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">login </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+    <span class="s0">protected static </span><span class="s1">String CURRENT_USER </span><span class="s2">= </span><span class="s3">&quot;&quot;</span><span class="s2">;</span>
+    <span class="s4">// Disable the back button</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onBackPressed</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">MainActivity</span><span class="s2">.</span><span class="s1">backAllowed</span><span class="s2">) {</span>
+            <span class="s0">super</span><span class="s2">.</span><span class="s1">onBackPressed</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_login</span><span class="s2">);</span>
+
+        <span class="s1">Context c </span><span class="s2">= </span><span class="s0">this</span><span class="s2">;</span>
+
+        <span class="s4">// set error_txt to invisible</span>
+        <span class="s1">TextView error_txt </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">error_txt2</span><span class="s2">);</span>
+        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+
+        <span class="s1">Button login_user </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">loginButton</span><span class="s2">);</span>
+
+        <span class="s1">login_user</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+                <span class="s1">UserDatabase db </span><span class="s2">= </span><span class="s0">new </span><span class="s1">UserDatabase</span><span class="s2">(</span><span class="s1">c</span><span class="s2">, </span><span class="s3">&quot;UserRegistration&quot;</span><span class="s2">);</span>
+
+                <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">columnHeaders </span><span class="s2">= </span><span class="s1">db</span><span class="s2">.</span><span class="s1">getColumnHeaders</span><span class="s2">();</span>
+
+                <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s3">&quot;====== main activity =====&quot;</span><span class="s2">, </span><span class="s1">columnHeaders</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+
+                <span class="s4">// get edittext views</span>
+                <span class="s1">EditText usernameEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">usernameText</span><span class="s2">);</span>
+                <span class="s1">EditText passwordEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">passwordText</span><span class="s2">);</span>
+
+                <span class="s4">// convert to string</span>
+                <span class="s1">String username </span><span class="s2">= </span><span class="s1">usernameEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String password </span><span class="s2">= </span><span class="s1">passwordEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String dbPassword </span><span class="s2">= </span><span class="s1">db</span><span class="s2">.</span><span class="s1">checkPassword</span><span class="s2">(</span><span class="s1">username</span><span class="s2">);</span>
+
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">username</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">password</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Uh oh, something's wrong. Please check that you filled out all sections and met all requirements .&quot;</span><span class="s2">);</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                <span class="s2">}</span>
+
+                <span class="s0">else if </span><span class="s2">(!</span><span class="s1">dbPassword</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s3">&quot;&quot;</span><span class="s2">)) {</span>
+                    <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s3">&quot;===== Checking Password =====&quot;</span><span class="s2">, </span><span class="s3">&quot;Password not empty&quot;</span><span class="s2">);</span>
+                    <span class="s0">try</span><span class="s2">{</span>
+                        <span class="s1">String userHashedPassword </span><span class="s2">= </span><span class="s1">Arrays</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">(</span><span class="s1">User_reg</span><span class="s2">.</span><span class="s1">messageDigest</span><span class="s2">(</span><span class="s1">password</span><span class="s2">));</span>
+                        <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s3">&quot;==== equal password ====&quot;</span><span class="s2">, </span><span class="s1">String</span><span class="s2">.</span><span class="s1">valueOf</span><span class="s2">(</span><span class="s1">dbPassword</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">userHashedPassword</span><span class="s2">)));</span>
+                        <span class="s0">if</span><span class="s2">(</span><span class="s1">dbPassword</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">userHashedPassword</span><span class="s2">)){</span>
+                            <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s3">&quot;Hash check&quot;</span><span class="s2">,</span><span class="s3">&quot;===hashed==&quot;</span><span class="s2">);</span>
+
+                            <span class="s1">CURRENT_USER </span><span class="s2">= </span><span class="s1">username</span><span class="s2">;</span>
+                            <span class="s1">MainActivity</span><span class="s2">.</span><span class="s1">backAllowed </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+                            <span class="s1">Intent intent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">login</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s1">home</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+                            <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">);</span>
+                        <span class="s2">}}</span>
+                    <span class="s0">catch </span><span class="s2">(</span><span class="s1">NoSuchAlgorithmException e</span><span class="s2">) {</span>
+                        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Username does not match password&quot;</span><span class="s2">);</span>
+                        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+
+                <span class="s2">}</span>
+
+                <span class="s0">else </span><span class="s2">{</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s3">&quot;Username does not match password&quot;</span><span class="s2">);</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                <span class="s2">}</span>
+
+
+
+
+
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+
+       <span class="s1">Button back_main </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">button0</span><span class="s2">);</span>
+
+
+
+        <span class="s1">back_main</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s4">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">MainActivity</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s4">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+
+<span class="s2">}</span></pre>
+</body>
+</html>

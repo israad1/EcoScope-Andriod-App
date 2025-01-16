@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>Check_sustainability2.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #7a7e85;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Check_sustainability2.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">AsyncTask</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">BufferedReader</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">IOException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">InputStreamReader</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">OutputStreamWriter</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">net</span><span class="s2">.</span><span class="s1">HttpURLConnection</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">net</span><span class="s2">.</span><span class="s1">URL</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Check_sustainability2 </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+    <span class="s0">private </span><span class="s1">Button back_button</span><span class="s2">;</span>
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_check_sustainability2</span><span class="s2">);</span>
+        <span class="s1">TextView resultTextView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">text_display</span><span class="s2">);</span>
+
+        <span class="s1">String category </span><span class="s2">= </span><span class="s1">getIntent</span><span class="s2">().</span><span class="s1">getStringExtra</span><span class="s2">(</span><span class="s3">&quot;category&quot;</span><span class="s2">);</span>
+
+        <span class="s0">new </span><span class="s1">CheckSustainabilityTask</span><span class="s2">(</span><span class="s1">resultTextView</span><span class="s2">).</span><span class="s1">execute</span><span class="s2">(</span><span class="s1">category</span><span class="s2">);</span>
+
+        <span class="s4">//go back to home page</span>
+        <span class="s1">back_button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">button3</span><span class="s2">);</span>
+        <span class="s1">back_button</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View view</span><span class="s2">) {</span>
+
+                <span class="s4">// Create an intent to start the next activity</span>
+                <span class="s1">Intent messageIntent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">getApplicationContext</span><span class="s2">(), </span><span class="s1">home</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+
+                <span class="s4">// Start the oneThroughFour activity</span>
+                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">messageIntent</span><span class="s2">);</span>
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+
+    <span class="s2">}</span>
+
+    <span class="s0">private static class </span><span class="s1">CheckSustainabilityTask </span><span class="s0">extends </span><span class="s1">AsyncTask</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">, </span><span class="s1">Void</span><span class="s2">, </span><span class="s1">String</span><span class="s2">&gt; {</span>
+        <span class="s0">private final </span><span class="s1">TextView resultTextView</span><span class="s2">;</span>
+
+        <span class="s1">CheckSustainabilityTask</span><span class="s2">(</span><span class="s1">TextView resultTextView</span><span class="s2">) {</span>
+            <span class="s0">this</span><span class="s2">.</span><span class="s1">resultTextView </span><span class="s2">= </span><span class="s1">resultTextView</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s1">@Override</span>
+        <span class="s0">protected </span><span class="s1">String doInBackground</span><span class="s2">(</span><span class="s1">String... params</span><span class="s2">) {</span>
+            <span class="s0">return </span><span class="s1">chatGPT</span><span class="s2">(</span><span class="s3">&quot;Is the product category '&quot; </span><span class="s2">+ </span><span class="s1">params</span><span class="s2">[</span><span class="s5">0</span><span class="s2">] + </span><span class="s3">&quot;' sustainable?&quot;</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s1">@Override</span>
+        <span class="s0">protected void </span><span class="s1">onPostExecute</span><span class="s2">(</span><span class="s1">String result</span><span class="s2">) {</span>
+            <span class="s1">resultTextView</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s1">result</span><span class="s2">);</span>
+        <span class="s2">}</span>
+
+        <span class="s0">private </span><span class="s1">String chatGPT</span><span class="s2">(</span><span class="s1">String prompt</span><span class="s2">) {</span>
+            <span class="s1">String url </span><span class="s2">= </span><span class="s3">&quot;https://api.openai.com/v1/chat/completions&quot;</span><span class="s2">;</span>
+            <span class="s1">String apiKey </span><span class="s2">= </span><span class="s3">&quot;sk-proj-XzbbEdHQ7sbwc70xsj94T3BlbkFJFUwLJ9TqBlHpcSkt5pfc&quot;</span><span class="s2">;</span>
+            <span class="s1">String model </span><span class="s2">= </span><span class="s3">&quot;gpt-3.5-turbo&quot;</span><span class="s2">;</span>
+
+            <span class="s0">try </span><span class="s2">{</span>
+                <span class="s1">URL obj </span><span class="s2">= </span><span class="s0">new </span><span class="s1">URL</span><span class="s2">(</span><span class="s1">url</span><span class="s2">);</span>
+                <span class="s1">HttpURLConnection connection </span><span class="s2">= (</span><span class="s1">HttpURLConnection</span><span class="s2">) </span><span class="s1">obj</span><span class="s2">.</span><span class="s1">openConnection</span><span class="s2">();</span>
+                <span class="s1">connection</span><span class="s2">.</span><span class="s1">setRequestMethod</span><span class="s2">(</span><span class="s3">&quot;POST&quot;</span><span class="s2">);</span>
+                <span class="s1">connection</span><span class="s2">.</span><span class="s1">setRequestProperty</span><span class="s2">(</span><span class="s3">&quot;Authorization&quot;</span><span class="s2">, </span><span class="s3">&quot;Bearer &quot; </span><span class="s2">+ </span><span class="s1">apiKey</span><span class="s2">);</span>
+                <span class="s1">connection</span><span class="s2">.</span><span class="s1">setRequestProperty</span><span class="s2">(</span><span class="s3">&quot;Content-Type&quot;</span><span class="s2">, </span><span class="s3">&quot;application/json&quot;</span><span class="s2">);</span>
+
+                <span class="s1">String body </span><span class="s2">= </span><span class="s3">&quot;{</span><span class="s0">\&quot;</span><span class="s3">model</span><span class="s0">\&quot;</span><span class="s3">: </span><span class="s0">\&quot;</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s1">model </span><span class="s2">+ </span><span class="s3">&quot;</span><span class="s0">\&quot;</span><span class="s3">, </span><span class="s0">\&quot;</span><span class="s3">messages</span><span class="s0">\&quot;</span><span class="s3">: [{</span><span class="s0">\&quot;</span><span class="s3">role</span><span class="s0">\&quot;</span><span class="s3">: </span><span class="s0">\&quot;</span><span class="s3">user</span><span class="s0">\&quot;</span><span class="s3">, </span><span class="s0">\&quot;</span><span class="s3">content</span><span class="s0">\&quot;</span><span class="s3">: </span><span class="s0">\&quot;</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s1">prompt </span><span class="s2">+ </span><span class="s3">&quot;</span><span class="s0">\&quot;</span><span class="s3">}]}&quot;</span><span class="s2">;</span>
+                <span class="s1">connection</span><span class="s2">.</span><span class="s1">setDoOutput</span><span class="s2">(</span><span class="s0">true</span><span class="s2">);</span>
+                <span class="s1">OutputStreamWriter writer </span><span class="s2">= </span><span class="s0">new </span><span class="s1">OutputStreamWriter</span><span class="s2">(</span><span class="s1">connection</span><span class="s2">.</span><span class="s1">getOutputStream</span><span class="s2">());</span>
+                <span class="s1">writer</span><span class="s2">.</span><span class="s1">write</span><span class="s2">(</span><span class="s1">body</span><span class="s2">);</span>
+                <span class="s1">writer</span><span class="s2">.</span><span class="s1">flush</span><span class="s2">();</span>
+                <span class="s1">writer</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+
+                <span class="s0">int </span><span class="s1">responseCode </span><span class="s2">= </span><span class="s1">connection</span><span class="s2">.</span><span class="s1">getResponseCode</span><span class="s2">();</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">responseCode </span><span class="s2">== </span><span class="s1">HttpURLConnection</span><span class="s2">.</span><span class="s1">HTTP_OK</span><span class="s2">) { </span><span class="s4">// success</span>
+                    <span class="s1">BufferedReader br </span><span class="s2">= </span><span class="s0">new </span><span class="s1">BufferedReader</span><span class="s2">(</span><span class="s0">new </span><span class="s1">InputStreamReader</span><span class="s2">(</span><span class="s1">connection</span><span class="s2">.</span><span class="s1">getInputStream</span><span class="s2">()));</span>
+                    <span class="s1">StringBuilder response </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringBuilder</span><span class="s2">();</span>
+                    <span class="s1">String line</span><span class="s2">;</span>
+                    <span class="s0">while </span><span class="s2">((</span><span class="s1">line </span><span class="s2">= </span><span class="s1">br</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">()) != </span><span class="s0">null</span><span class="s2">) {</span>
+                        <span class="s1">response</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">line</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s1">br</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+                    <span class="s0">return </span><span class="s1">extractMessageFromJSONResponse</span><span class="s2">(</span><span class="s1">response</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+                <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                    <span class="s4">// Log and return the server's error response</span>
+                    <span class="s1">String errorLine</span><span class="s2">;</span>
+                    <span class="s1">BufferedReader brError </span><span class="s2">= </span><span class="s0">new </span><span class="s1">BufferedReader</span><span class="s2">(</span><span class="s0">new </span><span class="s1">InputStreamReader</span><span class="s2">(</span><span class="s1">connection</span><span class="s2">.</span><span class="s1">getErrorStream</span><span class="s2">()));</span>
+                    <span class="s1">StringBuilder responseError </span><span class="s2">= </span><span class="s0">new </span><span class="s1">StringBuilder</span><span class="s2">();</span>
+                    <span class="s0">while </span><span class="s2">((</span><span class="s1">errorLine </span><span class="s2">= </span><span class="s1">brError</span><span class="s2">.</span><span class="s1">readLine</span><span class="s2">()) != </span><span class="s0">null</span><span class="s2">) {</span>
+                        <span class="s1">responseError</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">errorLine</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s1">brError</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+                    <span class="s0">return </span><span class="s3">&quot;Server returned HTTP response code: &quot; </span><span class="s2">+ </span><span class="s1">responseCode </span><span class="s2">+ </span><span class="s3">&quot; with error message: &quot; </span><span class="s2">+ </span><span class="s1">responseError</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s2">}</span>
+            <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">IOException e</span><span class="s2">) {</span>
+                <span class="s0">return </span><span class="s3">&quot;Failed to fetch data: &quot; </span><span class="s2">+ </span><span class="s1">e</span><span class="s2">.</span><span class="s1">getMessage</span><span class="s2">();</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+
+        <span class="s0">private </span><span class="s1">String extractMessageFromJSONResponse</span><span class="s2">(</span><span class="s1">String response</span><span class="s2">) {</span>
+            <span class="s0">int </span><span class="s1">start </span><span class="s2">= </span><span class="s1">response</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;content&quot;</span><span class="s2">)+ </span><span class="s5">11</span><span class="s2">;</span>
+            <span class="s0">int </span><span class="s1">end </span><span class="s2">= </span><span class="s1">response</span><span class="s2">.</span><span class="s1">indexOf</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\&quot;</span><span class="s3">&quot;</span><span class="s2">, </span><span class="s1">start</span><span class="s2">);</span>
+            <span class="s0">return </span><span class="s1">response</span><span class="s2">.</span><span class="s1">substring</span><span class="s2">(</span><span class="s1">start</span><span class="s2">, </span><span class="s1">end</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

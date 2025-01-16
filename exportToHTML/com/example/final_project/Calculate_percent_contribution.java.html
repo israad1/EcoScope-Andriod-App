@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>Calculate_percent_contribution.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Calculate_percent_contribution.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">CheckBox</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">CompoundButton</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Toast</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">Calculate_percent_contribution </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_calculate_percent_contribution</span><span class="s2">);</span>
+
+        <span class="s3">// Find checkboxes</span>
+        <span class="s1">CheckBox checkbox1 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox2 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox2</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox3 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox3</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox4 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox4</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox5 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox5</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox6 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox6</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox7 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox7</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox8 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox8</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox9 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox9</span><span class="s2">);</span>
+        <span class="s1">CheckBox checkbox10 </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">checkBox10</span><span class="s2">);</span>
+        <span class="s1">Button calculateButton </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">calculateButton</span><span class="s2">);</span>
+
+        <span class="s3">// Listener to update checkbox count</span>
+        <span class="s1">CompoundButton</span><span class="s2">.</span><span class="s1">OnCheckedChangeListener listener </span><span class="s2">= (</span><span class="s1">buttonView</span><span class="s2">, </span><span class="s1">isChecked</span><span class="s2">) </span><span class="s1">-&gt; </span><span class="s2">{</span>
+            <span class="s0">int </span><span class="s1">checkedCount </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox1</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox2</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox3</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox4</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox5</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox6</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox7</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox8</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox9</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox10</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+
+            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s5">&quot;Checked: &quot; </span><span class="s2">+ </span><span class="s1">checkedCount</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">();</span>
+        <span class="s2">};</span>
+
+        <span class="s3">// Set the listener on checkboxes</span>
+        <span class="s1">checkbox1</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox2</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox3</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox4</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox5</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox6</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox7</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox8</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox9</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+        <span class="s1">checkbox10</span><span class="s2">.</span><span class="s1">setOnCheckedChangeListener</span><span class="s2">(</span><span class="s1">listener</span><span class="s2">);</span>
+
+        <span class="s3">// Button click listener to calculate and navigate</span>
+        <span class="s1">calculateButton</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s1">v -&gt; </span><span class="s2">{</span>
+            <span class="s0">int </span><span class="s1">checkedCount </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox1</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox2</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox3</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox4</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox5</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox6</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox7</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox8</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox9</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">checkbox10</span><span class="s2">.</span><span class="s1">isChecked</span><span class="s2">()) </span><span class="s1">checkedCount</span><span class="s2">++;</span>
+            <span class="s0">int </span><span class="s1">percent </span><span class="s2">= </span><span class="s4">100 </span><span class="s2">* </span><span class="s1">checkedCount </span><span class="s2">/ </span><span class="s4">10</span><span class="s2">;</span>
+
+            <span class="s1">Intent intent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">Calculate_percent_contribution</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s1">Display_percent_commitment</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+            <span class="s1">intent</span><span class="s2">.</span><span class="s1">putExtra</span><span class="s2">(</span><span class="s5">&quot;percent&quot;</span><span class="s2">, </span><span class="s1">percent</span><span class="s2">);</span>
+            <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">);</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+<span class="s2">}</span>
+</pre>
+</body>
+</html>

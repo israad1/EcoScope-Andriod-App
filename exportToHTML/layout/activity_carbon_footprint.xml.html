@@ -1,0 +1,160 @@
+<html>
+<head>
+<title>activity_carbon_footprint.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+activity_carbon_footprint.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;androidx.constraintlayout.widget.ConstraintLayout </span><span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">xmlns:app</span><span class="s2">=&quot;http://schemas.android.com/apk/res-auto&quot;</span>
+    <span class="s1">xmlns:tools</span><span class="s2">=&quot;http://schemas.android.com/tools&quot;</span>
+    <span class="s1">android:id</span><span class="s2">=&quot;@+id/main&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:background</span><span class="s2">=&quot;#95D3A5&quot;</span>
+    <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#DF8383&quot;</span>
+    <span class="s1">tools:context</span><span class="s2">=&quot;.Carbon_footprint&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView3&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;68dp&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#DFDF99&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Carbon Footprint Calculator&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot;</span>
+            <span class="s1">app:autoSizeTextType</span><span class="s2">=&quot;uniform&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView5&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Enter Your Monthly Electricity consumption in kilowatt-hours (kWh)&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;20sp&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView4&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;To know whats your electricty consumption is, go to Tips and articles&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/electricity&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;49dp&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#DDEAE8&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView8&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Enter Your Vehicle usage below&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;20sp&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView9&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Select the type of Vehicle you own from below&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Spinner</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/spinner&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;54dp&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#DDEAE8&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView13&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Enter the number of avarage miles per day  that drove in your vehicle &quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:textStyle</span><span class="s2">=&quot;bold&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;EditText</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/miles&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;50dp&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#E4F4D2&quot;</span>
+            <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#DDEAE8&quot;</span>
+            <span class="s1">android:ems</span><span class="s2">=&quot;10&quot;</span>
+            <span class="s1">android:inputType</span><span class="s2">=&quot;text&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Button</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/button4&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#2C4D48&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Go back to Home Page&quot;</span>
+            <span class="s1">android:textColorLink</span><span class="s2">=&quot;#DEA6A6&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Button</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/button6&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#2C4D48&quot;</span>
+            <span class="s1">android:backgroundTint</span><span class="s2">=&quot;#A0D1D1&quot;</span>
+            <span class="s1">android:hapticFeedbackEnabled</span><span class="s2">=&quot;false&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Tips and articles&quot;</span>
+            <span class="s1">android:textColorLink</span><span class="s2">=&quot;#DEA6A6&quot;</span>
+            <span class="s1">app:strokeColor</span><span class="s2">=&quot;#71CCB2&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Button</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/calculate&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#2C4D48&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Calculate Your Carbon Footprint&quot;</span>
+            <span class="s1">android:textColorLink</span><span class="s2">=&quot;#DEA6A6&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#81D0C3&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;The result of the calculation will be displayed below&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;FrameLayout</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/fragment_container&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;#DDF8F4&quot;</span>
+            <span class="s1">android:contextClickable</span><span class="s2">=&quot;false&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s0">&lt;/FrameLayout&gt;</span>
+
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/textView11&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+<span class="s0">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span></pre>
+</body>
+</html>

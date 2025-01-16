@@ -1,0 +1,238 @@
+<html>
+<head>
+<title>User_reg.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+User_reg.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">final_project</span><span class="s2">;</span>
+
+
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">Manifest</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Context</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">Intent</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">pm</span><span class="s2">.</span><span class="s1">PackageManager</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Environment</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Log</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">view</span><span class="s2">.</span><span class="s1">View</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">Button</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">EditText</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.</span><span class="s1">TextView</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">ActivityCompat</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">androidx</span><span class="s2">.</span><span class="s1">core</span><span class="s2">.</span><span class="s1">content</span><span class="s2">.</span><span class="s1">ContextCompat</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">json</span><span class="s2">.</span><span class="s1">JSONException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">org</span><span class="s2">.</span><span class="s1">json</span><span class="s2">.</span><span class="s1">JSONObject</span><span class="s2">;</span>
+
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">File</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">FileNotFoundException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">FileOutputStream</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">io</span><span class="s2">.</span><span class="s1">OutputStreamWriter</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">nio</span><span class="s2">.</span><span class="s1">charset</span><span class="s2">.</span><span class="s1">StandardCharsets</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">security</span><span class="s2">.</span><span class="s1">MessageDigest</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">security</span><span class="s2">.</span><span class="s1">NoSuchAlgorithmException</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">LocalDateTime</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">List</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">User_reg </span><span class="s0">extends </span><span class="s1">AppCompatActivity </span><span class="s2">{</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">public void </span><span class="s1">onBackPressed</span><span class="s2">() {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">MainActivity</span><span class="s2">.</span><span class="s1">backAllowed</span><span class="s2">) {</span>
+            <span class="s0">super</span><span class="s2">.</span><span class="s1">onBackPressed</span><span class="s2">();</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">@Override</span>
+    <span class="s0">protected void </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">Bundle savedInstanceState</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">);</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_user_reg</span><span class="s2">);</span>
+        <span class="s1">Context c </span><span class="s2">= </span><span class="s0">this</span><span class="s2">;</span>
+
+        <span class="s3">// set error_txt to invisible</span>
+        <span class="s1">TextView error_txt </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">error_txt</span><span class="s2">);</span>
+        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">INVISIBLE</span><span class="s2">);</span>
+
+        <span class="s1">Button register_user </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">registerButton</span><span class="s2">);</span>
+
+        <span class="s1">register_user</span><span class="s2">.</span><span class="s1">setOnClickListener</span><span class="s2">(</span><span class="s0">new </span><span class="s1">View</span><span class="s2">.</span><span class="s1">OnClickListener</span><span class="s2">() {</span>
+            <span class="s1">@Override</span>
+            <span class="s0">public void </span><span class="s1">onClick</span><span class="s2">(</span><span class="s1">View v</span><span class="s2">) {</span>
+
+                <span class="s1">UserDatabase db </span><span class="s2">= </span><span class="s0">new </span><span class="s1">UserDatabase</span><span class="s2">(</span><span class="s1">c</span><span class="s2">, </span><span class="s4">&quot;UserRegistration&quot;</span><span class="s2">);</span>
+
+
+                <span class="s1">List</span><span class="s2">&lt;</span><span class="s1">String</span><span class="s2">&gt; </span><span class="s1">columnHeaders </span><span class="s2">= </span><span class="s1">db</span><span class="s2">.</span><span class="s1">getColumnHeaders</span><span class="s2">();</span>
+
+                <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s4">&quot;====== main activity =====&quot;</span><span class="s2">, </span><span class="s1">columnHeaders</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+
+                <span class="s3">// get edittext views</span>
+                <span class="s1">EditText nameEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">nameText</span><span class="s2">);</span>
+                <span class="s1">EditText ageEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">ageText</span><span class="s2">);</span>
+                <span class="s1">EditText genderEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">genderText</span><span class="s2">);</span>
+                <span class="s1">EditText usernameEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">username</span><span class="s2">);</span>
+                <span class="s1">EditText passwordEdit </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">password</span><span class="s2">);</span>
+
+                <span class="s3">// convert to string</span>
+                <span class="s1">String name </span><span class="s2">= </span><span class="s1">nameEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String age </span><span class="s2">= </span><span class="s1">ageEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String gender </span><span class="s2">= </span><span class="s1">genderEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String username </span><span class="s2">= </span><span class="s1">usernameEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">String password </span><span class="s2">= </span><span class="s1">passwordEdit</span><span class="s2">.</span><span class="s1">getText</span><span class="s2">().</span><span class="s1">toString</span><span class="s2">();</span>
+                <span class="s1">LocalDateTime created </span><span class="s2">= </span><span class="s1">LocalDateTime</span><span class="s2">.</span><span class="s1">now</span><span class="s2">();</span>
+
+                <span class="s0">try </span><span class="s2">{</span>
+                    <span class="s1">writeFile</span><span class="s2">(</span><span class="s4">&quot;User.txt&quot;</span><span class="s2">,</span><span class="s1">name</span><span class="s2">,</span><span class="s1">age</span><span class="s2">,</span><span class="s1">username</span><span class="s2">); </span><span class="s3">//filename:info.txt</span>
+
+                <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">JSONException e</span><span class="s2">) {</span>
+                    <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s2">();</span>
+                <span class="s2">} </span><span class="s0">catch </span><span class="s2">(</span><span class="s1">FileNotFoundException e</span><span class="s2">) {</span>
+                    <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s2">();</span>
+                <span class="s2">}</span>
+                <span class="s0">if </span><span class="s2">(</span><span class="s1">name</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">age</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">gender</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">username</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">password</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Uh oh, something's wrong. Please check that you filled out all sections and met all requirements .&quot;</span><span class="s2">);</span>
+                    <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                <span class="s2">}</span>
+
+                <span class="s0">else </span><span class="s2">{</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">verifyPass</span><span class="s2">(</span><span class="s1">password</span><span class="s2">) &amp; </span><span class="s1">verifyUsername</span><span class="s2">(</span><span class="s1">username</span><span class="s2">)) {</span>
+                        <span class="s0">try </span><span class="s2">{</span>
+                            <span class="s0">int </span><span class="s1">converted_age </span><span class="s2">= </span><span class="s1">Integer</span><span class="s2">.</span><span class="s1">parseInt</span><span class="s2">(</span><span class="s1">age</span><span class="s2">);</span>
+                            <span class="s0">byte</span><span class="s2">[] </span><span class="s1">hashed_password </span><span class="s2">= </span><span class="s1">messageDigest</span><span class="s2">(</span><span class="s1">password</span><span class="s2">);</span>
+                            <span class="s0">if </span><span class="s2">(</span><span class="s1">db</span><span class="s2">.</span><span class="s1">checkUniqueUser</span><span class="s2">(</span><span class="s1">username</span><span class="s2">).</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+                                <span class="s1">db</span><span class="s2">.</span><span class="s1">addInfo</span><span class="s2">(</span><span class="s1">username</span><span class="s2">, </span><span class="s1">hashed_password</span><span class="s2">, </span><span class="s1">name</span><span class="s2">, </span><span class="s1">age</span><span class="s2">, </span><span class="s1">gender</span><span class="s2">, </span><span class="s1">created</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">());</span>
+
+                                <span class="s1">MainActivity</span><span class="s2">.</span><span class="s1">backAllowed </span><span class="s2">= </span><span class="s0">false</span><span class="s2">;</span>
+
+                                <span class="s1">Intent intent </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Intent</span><span class="s2">(</span><span class="s1">User_reg</span><span class="s2">.</span><span class="s0">this</span><span class="s2">, </span><span class="s1">login</span><span class="s2">.</span><span class="s0">class</span><span class="s2">);</span>
+                                <span class="s1">startActivity</span><span class="s2">(</span><span class="s1">intent</span><span class="s2">);</span>
+                            <span class="s2">}</span>
+
+                            <span class="s0">else </span><span class="s2">{</span>
+                                <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Uh oh, someone already has that username, please choose a new one.&quot;</span><span class="s2">);</span>
+                                <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                            <span class="s2">}</span>
+                        <span class="s2">}</span>
+                        <span class="s0">catch</span><span class="s2">(</span><span class="s1">Exception e</span><span class="s2">) {</span>
+                            <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Please give a valid age.&quot;</span><span class="s2">);</span>
+                            <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                        <span class="s2">}</span>
+
+                    <span class="s2">}</span>
+                    <span class="s0">else </span><span class="s2">{</span>
+                        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setText</span><span class="s2">(</span><span class="s4">&quot;Uh oh, something's wrong. Please check that you filled out all sections and met all requirements .&quot;</span><span class="s2">);</span>
+                        <span class="s1">error_txt</span><span class="s2">.</span><span class="s1">setVisibility</span><span class="s2">(</span><span class="s1">View</span><span class="s2">.</span><span class="s1">VISIBLE</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                <span class="s2">}</span>
+
+
+
+            <span class="s2">}</span>
+        <span class="s2">});</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">Boolean verifyUsername</span><span class="s2">(</span><span class="s1">String username</span><span class="s2">) {</span>
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">username</span><span class="s2">.</span><span class="s1">length</span><span class="s2">() == </span><span class="s5">5</span><span class="s2">) {</span>
+
+            <span class="s3">// check each character is alphanumeric</span>
+            <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s5">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">username</span><span class="s2">.</span><span class="s1">length</span><span class="s2">(); </span><span class="s1">i</span><span class="s2">++) {</span>
+                <span class="s0">char </span><span class="s1">character </span><span class="s2">= </span><span class="s1">username</span><span class="s2">.</span><span class="s1">charAt</span><span class="s2">(</span><span class="s1">i</span><span class="s2">);</span>
+
+                <span class="s3">// if not alphanumeric return false</span>
+                <span class="s0">if </span><span class="s2">(!</span><span class="s1">Character</span><span class="s2">.</span><span class="s1">isLetterOrDigit</span><span class="s2">(</span><span class="s1">character</span><span class="s2">)) {</span>
+                    <span class="s0">return false</span><span class="s2">;</span>
+                <span class="s2">}</span>
+            <span class="s2">}</span>
+
+            <span class="s3">// return true since all characters are alphanumeric and length == 5</span>
+            <span class="s0">return true</span><span class="s2">;</span>
+        <span class="s2">}</span>
+
+        <span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">return false</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private </span><span class="s1">Boolean verifyPass</span><span class="s2">(</span><span class="s1">String password</span><span class="s2">) {</span>
+        <span class="s0">if</span><span class="s2">(</span><span class="s1">password</span><span class="s2">.</span><span class="s1">length</span><span class="s2">() == </span><span class="s5">8</span><span class="s2">) {</span>
+            <span class="s0">char </span><span class="s1">firstChar </span><span class="s2">= </span><span class="s1">password</span><span class="s2">.</span><span class="s1">charAt</span><span class="s2">(</span><span class="s5">0</span><span class="s2">);    </span><span class="s3">//gets first character</span>
+
+            <span class="s0">return </span><span class="s1">Character</span><span class="s2">.</span><span class="s1">isUpperCase</span><span class="s2">(</span><span class="s1">firstChar</span><span class="s2">);    </span><span class="s3">//returns if first character is upper case</span>
+        <span class="s2">}</span>
+
+        <span class="s0">else </span><span class="s2">{</span>
+            <span class="s0">return false</span><span class="s2">;</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s0">protected static byte</span><span class="s2">[] </span><span class="s1">messageDigest</span><span class="s2">(</span><span class="s1">String s</span><span class="s2">) </span><span class="s0">throws </span><span class="s1">NoSuchAlgorithmException </span><span class="s2">{</span>
+        <span class="s3">// Static getInstance method is called with hashing SHA</span>
+        <span class="s1">MessageDigest md </span><span class="s2">= </span><span class="s1">MessageDigest</span><span class="s2">.</span><span class="s1">getInstance</span><span class="s2">(</span><span class="s4">&quot;SHA-256&quot;</span><span class="s2">);</span>
+        <span class="s3">// digest() method called</span>
+        <span class="s3">// to calculate message digest of an input</span>
+        <span class="s3">// and return array of byte</span>
+        <span class="s0">return </span><span class="s1">md</span><span class="s2">.</span><span class="s1">digest</span><span class="s2">(</span><span class="s1">s</span><span class="s2">.</span><span class="s1">getBytes</span><span class="s2">(</span><span class="s1">StandardCharsets</span><span class="s2">.</span><span class="s1">UTF_8</span><span class="s2">));</span>
+    <span class="s2">}</span>
+
+
+
+    <span class="s3">//for JSON files</span>
+    <span class="s0">private boolean </span><span class="s1">hasWritePermissions</span><span class="s2">() {</span>
+        <span class="s0">return </span><span class="s2">(</span><span class="s1">ContextCompat</span><span class="s2">.</span><span class="s1">checkSelfPermission</span><span class="s2">(</span><span class="s0">this</span><span class="s2">,</span>
+                <span class="s1">android</span><span class="s2">.</span><span class="s1">Manifest</span><span class="s2">.</span><span class="s1">permission</span><span class="s2">.</span><span class="s1">WRITE_EXTERNAL_STORAGE</span><span class="s2">) == </span><span class="s1">PackageManager</span><span class="s2">.</span><span class="s1">PERMISSION_GRANTED</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+    <span class="s0">private void </span><span class="s1">requestAppPermissions</span><span class="s2">() {</span>
+        <span class="s3">//  if (hasReadPermissions() &amp;&amp; hasWritePermissions()) {</span>
+        <span class="s0">if </span><span class="s2">(</span><span class="s1">hasWritePermissions</span><span class="s2">()) {</span>
+
+            <span class="s0">return</span><span class="s2">;</span>
+        <span class="s2">}</span>
+        <span class="s1">ActivityCompat</span><span class="s2">.</span><span class="s1">requestPermissions</span><span class="s2">(</span><span class="s0">this</span><span class="s2">,</span>
+                <span class="s0">new </span><span class="s1">String</span><span class="s2">[] {</span>
+                        <span class="s1">android</span><span class="s2">.</span><span class="s1">Manifest</span><span class="s2">.</span><span class="s1">permission</span><span class="s2">.</span><span class="s1">READ_EXTERNAL_STORAGE</span><span class="s2">,</span>
+                        <span class="s1">Manifest</span><span class="s2">.</span><span class="s1">permission</span><span class="s2">.</span><span class="s1">WRITE_EXTERNAL_STORAGE</span>
+                <span class="s2">}, </span><span class="s5">0</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">public void </span><span class="s1">writeFile</span><span class="s2">(</span><span class="s1">String filename</span><span class="s2">,</span><span class="s1">String name</span><span class="s2">,</span><span class="s1">String age</span><span class="s2">, </span><span class="s1">String username</span><span class="s2">) </span><span class="s0">throws </span><span class="s1">JSONException</span><span class="s2">, </span><span class="s1">FileNotFoundException </span><span class="s2">{</span>
+
+        <span class="s1">String myDir </span><span class="s2">= </span><span class="s1">Environment</span><span class="s2">.</span><span class="s1">getExternalStorageDirectory</span><span class="s2">() +</span><span class="s4">&quot;/Download/&quot;</span><span class="s2">+</span><span class="s1">filename</span><span class="s2">; </span><span class="s3">//creating a file in the internal storage/Documents folder on phone.</span>
+
+        <span class="s3">// String myDir = Environment.getExternalStorageDirectory() +&quot;/Documents/&quot;+filename; //creating a file in the internal storage/Documents folder on phone.</span>
+        <span class="s1">Log</span><span class="s2">.</span><span class="s1">d</span><span class="s2">(</span><span class="s4">&quot;PrintDir&quot;</span><span class="s2">,</span><span class="s4">&quot;=====&quot;</span><span class="s2">+</span><span class="s1">myDir</span><span class="s2">);</span>
+        <span class="s1">File file </span><span class="s2">= </span><span class="s0">new </span><span class="s1">File</span><span class="s2">(</span><span class="s1">myDir</span><span class="s2">);    </span><span class="s3">//creating a file object</span>
+        <span class="s1">JSONObject actJSON </span><span class="s2">= </span><span class="s0">new </span><span class="s1">JSONObject</span><span class="s2">();   </span><span class="s3">//create a JSONObject</span>
+        <span class="s1">actJSON</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s4">&quot;Name&quot;</span><span class="s2">,</span><span class="s1">name</span><span class="s2">);</span>
+        <span class="s1">actJSON</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s4">&quot;Age&quot;</span><span class="s2">,</span><span class="s1">age</span><span class="s2">);</span>
+        <span class="s1">actJSON</span><span class="s2">.</span><span class="s1">put</span><span class="s2">(</span><span class="s4">&quot;Username&quot;</span><span class="s2">,</span><span class="s1">username</span><span class="s2">);</span>
+        <span class="s3">//Write to the file and store in internal storage</span>
+        <span class="s1">FileOutputStream fOut </span><span class="s2">= </span><span class="s0">new </span><span class="s1">FileOutputStream</span><span class="s2">(</span><span class="s1">file</span><span class="s2">, </span><span class="s0">true</span><span class="s2">); </span><span class="s3">//create a file output stream for writing data to file</span>
+        <span class="s1">OutputStreamWriter myOutWriter </span><span class="s2">= </span><span class="s0">new </span><span class="s1">OutputStreamWriter</span><span class="s2">(</span><span class="s1">fOut</span><span class="s2">);  </span><span class="s3">//converts character stream into byte stream</span>
+        <span class="s0">try </span><span class="s2">{</span>
+            <span class="s1">myOutWriter</span><span class="s2">.</span><span class="s1">append</span><span class="s2">(</span><span class="s1">actJSON</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">() + </span><span class="s4">&quot;</span><span class="s0">\n</span><span class="s4">&quot;</span><span class="s2">);  </span><span class="s3">//write JSONObject to file</span>
+            <span class="s1">myOutWriter</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+            <span class="s1">fOut</span><span class="s2">.</span><span class="s1">close</span><span class="s2">();</span>
+        <span class="s2">}</span>
+        <span class="s0">catch </span><span class="s2">(</span><span class="s1">Exception e</span><span class="s2">){</span>
+            <span class="s1">e</span><span class="s2">.</span><span class="s1">printStackTrace</span><span class="s2">();  </span><span class="s3">//to handle exceptions and errors.</span>
+        <span class="s2">}</span>
+
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>

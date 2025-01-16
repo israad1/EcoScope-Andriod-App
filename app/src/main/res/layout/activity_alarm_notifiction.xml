@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#AEDEE8"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/setbtn"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".45"
+                android:shadowColor="#3E9479"
+                android:text="set / update"
+                android:textColorHighlight="#4AA272"
+                android:textColorLink="#53AC9D"
+                app:rippleColor="#50AB84"
+                app:strokeColor="#5EC199" />
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight=".1" />
+
+            <Button
+                android:id="@+id/deletebtn"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".45"
+                android:shadowColor="#60B9B2"
+                android:text="delete"
+                android:textColorLink="#58C7C2" />
+        </LinearLayout>
+
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="352dp"
+            android:amPmBackgroundColor="#A45A5A"
+            android:numbersBackgroundColor="#EAE9BA"
+            android:numbersInnerTextColor="#994B4B"
+            android:numbersSelectorColor="#2A8490" />
+
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"
+            android:datePickerMode="spinner"
+            android:yearListSelectorColor="#A96969" />
+
+    </LinearLayout>
+</ScrollView>
